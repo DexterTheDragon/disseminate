@@ -17,3 +17,5 @@ deploy:
   app: disseminate
   on:
     repo: DexterTheDragon/disseminate
+    rvm: 2.0.0
+  run: "rake db:migrate"

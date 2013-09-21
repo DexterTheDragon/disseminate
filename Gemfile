@@ -47,4 +47,5 @@ group :development, :test do
   gem 'debugger'
   gem 'sqlite3'
   gem 'dotenv-rails'
+  gem 'coveralls', require: false
 end

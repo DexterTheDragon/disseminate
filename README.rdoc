@@ -1,6 +1,8 @@
 == README
 {<img src="https://travis-ci.org/DexterTheDragon/disseminate.png?branch=master" alt="Build Status" />}[https://travis-ci.org/DexterTheDragon/disseminate]
 {<img src="https://gemnasium.com/DexterTheDragon/disseminate.png" alt="Dependency Status" />}[https://gemnasium.com/DexterTheDragon/disseminate]
+{<img src="https://codeclimate.com/github/DexterTheDragon/disseminate.png" />}[https://codeclimate.com/github/DexterTheDragon/disseminate]
+{<img src="https://coveralls.io/repos/DexterTheDragon/disseminate/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/DexterTheDragon/disseminate]
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

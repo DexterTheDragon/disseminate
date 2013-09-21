@@ -1,14 +1,19 @@
 # vim: set sw=2:
 language: ruby
-
 rvm:
   - 2.0.0
   - ruby-head
-
 env:
   global:
     - SECRET_TOKEN=lalalalalalalala
-
 matrix:
   allow_failures:
     - rvm: ruby-head
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: VAXp5QOBWGXxa0sO896gi8nxaN7W45Sv+0bdLXWpJ3s9L2YVIUG+LgLB04/Tes7PiO4pkY72ZUEaft6QjtFnuWdIyvmO642dtiTyHfV7zHz2aGBjaM400XE1vz99qzGLzZ+vLAaQ26cxFzE5n6HJvIszMuI/SWYirWl4v0p3bfA=
+  app: disseminate
+  on:
+    repo: DexterTheDragon/disseminate

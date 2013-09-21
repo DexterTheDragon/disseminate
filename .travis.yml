@@ -1,9 +1,14 @@
+# vim: set sw=2:
 language: ruby
 
 rvm:
-    - 2.0.0
-    - ruby-head
+  - 2.0.0
+  - ruby-head
 
 env:
-    global:
-        - SECRET_TOKEN=lalalalalalalala
+  global:
+    - SECRET_TOKEN=lalalalalalalala
+
+matrix:
+  allow_failures:
+    - rvm: ruby-head

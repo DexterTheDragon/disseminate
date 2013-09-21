@@ -4,6 +4,7 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 gem 'pg'
+gem 'foreigner'
 gem 'rails_12factor'
 gem 'unicorn'
 
@@ -35,9 +36,6 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Use debugger
 group :development, :test do

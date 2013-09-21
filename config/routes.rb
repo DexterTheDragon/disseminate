@@ -1,4 +1,9 @@
 Disseminate::Application.routes.draw do
+  match "/auth/:provider/callback" => "sessions#create", via: %i(get, post)
+  match '/auth/failure' => 'sessions#failure', via: %i(get post)
+  match '/logout' => 'sessions#destroy', via: %i(get delete), as: :logout
+  get '/sessions/new'
+  root to: "root#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

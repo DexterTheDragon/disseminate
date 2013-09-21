@@ -8,6 +8,9 @@ gem 'foreigner'
 gem 'rails_12factor'
 gem 'unicorn'
 
+gem "omniauth"
+gem "omniauth-github"
+
 gem 'twitter-bootstrap-rails'
 
 # Use SCSS for stylesheets
@@ -43,4 +46,5 @@ end
 group :development, :test do
   gem 'debugger'
   gem 'sqlite3'
+  gem 'dotenv-rails'
 end

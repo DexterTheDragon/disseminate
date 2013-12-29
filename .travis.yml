@@ -10,6 +10,10 @@ matrix:
   allow_failures:
     - rvm: ruby-head
 
+# remove the ruby line from Gemfile so we can test multiple versions
+before_install:
+  - sed -i '/^ruby/d' Gemfile
+
 deploy:
   provider: heroku
   api_key:

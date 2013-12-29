@@ -202,7 +202,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-rails (~> 4.0.0)
   coveralls
   cucumber-rails
   database_cleaner

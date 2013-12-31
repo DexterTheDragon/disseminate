@@ -121,6 +121,8 @@ GEM
       omniauth (~> 1.0)
     pg (0.17.1)
     polyglot (0.3.3)
+    pundit (0.2.1)
+      activesupport (>= 3.0.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -216,6 +218,7 @@ DEPENDENCIES
   omniauth
   omniauth-github
   pg
+  pundit
   rails (= 4.0.2)
   rails-footnotes
   rails_12factor

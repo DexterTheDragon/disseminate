@@ -2,8 +2,13 @@ require 'test_helper'
 
 class GroupsControllerTest < ActionController::TestCase
   setup do
-    @controller.session[:user_id] = '12345'
+    #TODO: replace with FactoryGirl
+    user = User.create
+    @controller.session[:user_id] = user.id
     @group = groups(:one)
+    @group.user_id = user.id
+    @group.save
+    @group.reload
   end
 
   test "should get index" do

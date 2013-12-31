@@ -1,0 +1,7 @@
+bugs:
+  provider: developer
+  name: Bugs Bunny
+
+elmer:
+  provider: developer
+  name: Elmer Fudd

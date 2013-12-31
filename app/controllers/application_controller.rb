@@ -1,4 +1,12 @@
 class ApplicationController < ActionController::Base
+  include Pundit
+
+  # Verify that controller actions are authorized. Optional, but good.
+  # after_filter :verify_authorized, except: :index
+  # after_filter :verify_policy_scoped, only: :index
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -38,5 +46,10 @@ class ApplicationController < ActionController::Base
 
   def redirect_path
     :root
+  end
+
+  def user_not_authorized
+    flash[:error] = "You are not authorized to perform this action."
+    redirect_to request.headers["Referer"] || root_path
   end
 end

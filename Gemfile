@@ -11,6 +11,8 @@ gem 'unicorn'
 gem "omniauth"
 gem "omniauth-github"
 
+gem "pundit"
+
 gem 'twitter-bootstrap-rails'
 
 # Use SCSS for stylesheets

@@ -44,9 +44,10 @@ end
 
 # Use debugger
 group :development, :test do
+  gem 'dotenv-rails'
+  gem 'rails-footnotes'
   gem 'debugger'
   gem 'sqlite3'
-  gem 'dotenv-rails'
   gem 'coveralls', require: false
 end
 

@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-    if session.has_key?(:user_id)
+    if session[:user_id].present?
       current_user
     else
       redirect_to redirect_path

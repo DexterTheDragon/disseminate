@@ -5,7 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.2'
 gem 'pg'
 gem 'foreigner'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 gem 'unicorn'
 
 gem "omniauth"

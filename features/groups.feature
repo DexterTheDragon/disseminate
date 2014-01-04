@@ -8,7 +8,10 @@ Feature: Managing Groups
 
   Scenario: Adding a new group
     When I visit the Add Group page
-    And I fill in the form
+    And I submit an empty form
+    Then I should receive an error message on "Name"
+
+    When I fill in the form
     Then I should see "Group was successfully created."
 
   Scenario: Managing my groups

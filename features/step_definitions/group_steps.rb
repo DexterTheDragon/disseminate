@@ -33,3 +33,13 @@ When(/^I create a group$/) do
   step %{I fill in the form}
   step %{I visit the Group List page}
 end
+
+When(/^I submit an empty form$/) do
+  click_on 'Create Group'
+end
+
+Then(/^I should receive an error message on "(.*?)"$/) do |field|
+  within '.text-error' do
+    assert page.has_content?(field)
+  end
+end

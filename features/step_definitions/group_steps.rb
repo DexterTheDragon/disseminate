@@ -39,7 +39,7 @@ When(/^I submit an empty form$/) do
 end
 
 Then(/^I should receive an error message on "(.*?)"$/) do |field|
-  within '.text-error' do
+  within '.error' do
     assert page.has_content?(field)
   end
 end

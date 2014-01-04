@@ -1,26 +1,13 @@
-<%= form_for @group, :html => { :class => 'form-horizontal' } do |f| %>
-  <% if @group.errors.any? %>
-    <ul>
-      <% @group.errors.full_messages.each do |msg| %>
-        <li class="text-error"><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :description, :class => 'text_field' %>
-    </div>
+<%= simple_form_for(@group, html: {class: 'form-horizontal' }) do |form| %>
+  <%= form.error_notification %>
+
+  <div class="form-inputs">
+    <%= form.input :name %>
+    <%= form.input :description %>
   </div>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= form.button :submit, class: 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 groups_path, :class => 'btn' %>
   </div>

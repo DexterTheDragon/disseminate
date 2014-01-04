@@ -13,6 +13,7 @@ gem "omniauth-github"
 
 gem "pundit"
 
+gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 
 # Use SCSS for stylesheets

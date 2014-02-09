@@ -39,3 +39,17 @@ class ActiveSupport::TestCase
   }
   OmniAuth.config.add_mock(:github, omniauth_hash)
 end
+
+class PolicyTest < ActiveSupport::TestCase
+  def permit(current_user, record, action)
+    policy_class.new(current_user, record).public_send("#{action}?")
+  end
+
+  def forbid(current_user, record, action)
+    !permit(current_user, record, action)
+  end
+
+  def policy_class
+    self.class.to_s.gsub(/Test/, '').constantize
+  end
+end

@@ -9,7 +9,7 @@ When(/^I fill in the form$/) do
 end
 
 Then(/^I should see "(.*?)"$/) do |text|
-  assert(page.has_content?(text), "page has content #{text}")
+  assert page.has_content?(text), "page has content #{text}"
 end
 
 Given(/^there are groups owned by other users$/) do

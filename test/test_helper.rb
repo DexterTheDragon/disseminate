@@ -40,6 +40,12 @@ class ActiveSupport::TestCase
   OmniAuth.config.add_mock(:github, omniauth_hash)
 end
 
+class ActionController::TestCase
+  def json
+    ActiveSupport::JSON.decode @response.body
+  end
+end
+
 class PolicyTest < ActiveSupport::TestCase
   def permit(current_user, record, action)
     policy_class.new(current_user, record).public_send("#{action}?")

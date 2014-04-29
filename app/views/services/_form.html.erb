@@ -1,0 +1,12 @@
+<%= simple_form_for([@group, @service.becomes(Service)]) do |f| %>
+  <% f.object = @service.becomes(@service.class) %>
+  <%= f.error_notification %>
+
+  <%= f.hidden_field :type %>
+
+  <%= render @service.type.underscore, f: f %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

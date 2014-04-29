@@ -1,5 +1,11 @@
 Disseminate::Application.routes.draw do
-  resources :groups
+  resources :groups do
+    resources :services do
+      collection do
+        get 'new/:type', action: :new_type, as: :new_type
+      end
+    end
+  end
 
   match "/auth/:provider/callback" => "sessions#create", via: %i(get post)
   match '/auth/failure' => 'sessions#failure', via: %i(get post)

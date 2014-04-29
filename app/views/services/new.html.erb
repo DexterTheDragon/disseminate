@@ -1,0 +1,7 @@
+<h1>New service</h1>
+
+<div class="services">
+  <% Service::TYPES.each do |type| %>
+    <%= link_to type.constantize.display_name.titleize, new_type_group_services_path(@group, type.constantize.display_name.underscore) %>
+  <% end %>
+</div>

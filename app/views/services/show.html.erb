@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @service.type %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @service.data %>
+</p>
+
+<%= link_to 'Edit', edit_group_service_path(@group, @service) %> |
+<%= link_to 'Back', group_path(@group) %>

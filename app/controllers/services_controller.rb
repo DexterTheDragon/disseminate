@@ -2,19 +2,24 @@ class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
   before_action :set_group
 
+  respond_to :html, :json
+
   # GET /services
   # GET /services.json
   def index
     @services = Service.all
+    respond_with @services
   end
 
   # GET /services/1
   # GET /services/1.json
   def show
+    respond_with @service
   end
 
   # GET /services/new
   def new
+    respond_with @service
   end
 
   def new_type
@@ -23,36 +28,24 @@ class ServicesController < ApplicationController
 
   # GET /services/1/edit
   def edit
+    respond_with @service
   end
 
   # POST /services
   # POST /services.json
   def create
     @service = @group.services.build(service_params)
-
-    respond_to do |format|
-      if @service.save
-        format.html { redirect_to [@group, @service.becomes(Service)], notice: 'Service was successfully created.' }
-        format.json { render action: 'show', status: :created, location: [@group, @service.becomes(Service)] }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @service.errors, status: :unprocessable_entity }
-      end
+    flash[:notice] = 'Service was successfully created.' if @service.save
+    respond_with [@group, @service.becomes(Service)] do |format|
+      format.json { render :show, status: :created }
     end
   end
 
   # PATCH/PUT /services/1
   # PATCH/PUT /services/1.json
   def update
-    respond_to do |format|
-      if @service.update(service_params)
-        format.html { redirect_to [@group, @service.becomes(Service)], notice: 'Service was successfully updated.' }
-        format.json { render action: 'show', status: :ok, location: @service }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @service.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = 'Service was successfully updated.' if @service.update(service_params)
+    respond_with [@group, @service.becomes(Service)]
   end
 
   # DELETE /services/1

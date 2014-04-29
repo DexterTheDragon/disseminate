@@ -2,64 +2,52 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
+  respond_to :html, :json
+
   # GET /groups
   # GET /groups.json
   def index
     @groups = policy_scope(Group)
+    respond_with @groups
   end
 
   # GET /groups/1
   # GET /groups/1.json
   def show
+    respond_with @group
   end
 
   # GET /groups/new
   def new
     @group = Group.new
+    respond_with @group
   end
 
   # GET /groups/1/edit
   def edit
+    respond_with @group
   end
 
   # POST /groups
   # POST /groups.json
   def create
     @group = current_user.groups.build(group_params)
-
-    respond_to do |format|
-      if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @group }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = 'Group was successfully created.' if @group.save
+    respond_with @group
   end
 
   # PATCH/PUT /groups/1
   # PATCH/PUT /groups/1.json
   def update
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = 'Group was successfully updated.' if @group.update(group_params)
+    respond_with @group
   end
 
   # DELETE /groups/1
   # DELETE /groups/1.json
   def destroy
     @group.destroy
-    respond_to do |format|
-      format.html { redirect_to groups_url }
-      format.json { head :no_content }
-    end
+    respond_with @group
   end
 
   private

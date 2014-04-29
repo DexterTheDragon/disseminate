@@ -1,7 +1,7 @@
 # vim: set sw=2:
 language: ruby
 rvm:
-  - 2.0.0
+  - 2.1.1
   - ruby-head
 env:
   global:
@@ -21,5 +21,5 @@ deploy:
   app: disseminate
   on:
     repo: DexterTheDragon/disseminate
-    rvm: 2.0.0
+    rvm: 2.1.1
   run: "rake db:migrate"

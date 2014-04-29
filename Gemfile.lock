@@ -131,7 +131,7 @@ GEM
       omniauth (~> 1.2)
     pg (0.17.1)
     polyglot (0.3.4)
-    pundit (0.2.1)
+    pundit (0.2.3)
       activesupport (>= 3.0.0)
     rack (1.5.2)
     rack-test (0.6.2)

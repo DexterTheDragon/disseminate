@@ -14,7 +14,7 @@ gem "omniauth-github"
 gem "pundit"
 
 gem 'simple_form'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0'
